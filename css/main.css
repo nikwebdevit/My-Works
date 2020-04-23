@@ -1,0 +1,35 @@
+body {
+  background-color: #101010;
+  color: #fff;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  max-width: 900px;
+  margin: 0 auto;
+}
+hr{
+  width: 90%;
+  border: none;
+  background-color: #999;
+  height: 1px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+header {
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+}
+header h1,
+h4 {
+  margin: 0;
+}
+header h1 {
+  margin-top: 50px;
+  margin-bottom: 5px;
+}
+header h4{
+  color: #999;
+}
