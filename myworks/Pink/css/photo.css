@@ -1,0 +1,363 @@
+/*←←←←←←←←←←General→→→→→→→→→→*/
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+/*←←←←←←←←←← ----------------- →→→→→→→→→→*/
+/*←←←←←←←←←← Header - top_menu →→→→→→→→→→*/
+
+.menu-burger {
+	display: none;
+}
+
+.fixed_menu_none {
+	display: none;
+}
+
+.wrapper_header {
+	background-image: url(../img/photo/header/back-desktop.png);
+	background-position: center;
+	height: 400px;
+}
+
+.wrapper_header header {
+	max-width: 1200px;
+	background-color: rgba(0, 0, 0, 0.3);
+	height: 110px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.wrapper_header header ul {
+	display: flex;
+	margin-right: 130px;
+}
+
+.wrapper_header header ul li a {
+	font-family: "Open Sans";
+	font-size: 18px;
+	transition: 0.1s;
+	padding-bottom: 10px;
+}
+
+.wrapper_header header ul li #current {
+	border-bottom: 2px solid #fff;
+}
+
+.wrapper_header header ul li a:hover {
+	color: #d22856;
+	border-bottom: 2px solid #fff;
+}
+
+.wrapper_header header ul li .menu_center {
+	margin: 0 80px;
+}
+
+.wrapper_header header .logo {
+	margin-left: 130px;
+}
+
+.wrapper_header > p {
+	color: #ffffff;
+	font-size: 50px;
+	display: flex;
+	justify-content: center;
+	height: 72%;
+	align-items: center;
+	font-weight: 300;
+	text-align: center;
+}
+
+/*←←←←←←←←←← ------ →→→→→→→→→→*/
+/*←←←←←←←←←← section →→→→→→→→→→*/
+.section {
+	max-width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.section > h2 {
+	margin: 100px 0;
+	font-size: 22px;
+	font-weight: 400;
+	line-height: 30px;
+	color: #283645;
+}
+
+.section > img {
+	width: 100%;
+	box-shadow: 0 0 10px #999;
+}
+
+.section .grid_post {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.section .grid_post .post {
+	margin: 25px 10px;
+	background-color: #f2f2f2;
+	width: 300px;
+	box-shadow: 0 0 5px #999;
+}
+
+.section .grid_post .post .post_content {
+	text-align: left;
+	margin: 30px;
+
+}
+
+.section .grid_post .post .post_content h3 {
+	font-weight: 700;
+	line-height: 24px;
+	font-size: 14px;
+}
+
+.section .grid_post .post .post_content > p {
+	line-height: 24px;
+	font-size: 14px;
+	height: 50px;
+}
+
+.section .grid_post .post .post_content .like {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.section .grid_post .post .post_content .like p {
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 24px;
+	text-transform: uppercase;
+	color: #d22856;
+}
+/*←←←←←←←←←← ------ →→→→→→→→→→*/
+/*←←←←←←←←←← footer →→→→→→→→→→*/
+
+footer {
+	max-width: 1200px;
+	height: 200px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+footer > a {
+	margin: 0 10px;
+}
+
+footer p {
+	font-size: 18px;
+	color: #283645;
+	line-height: 28px;
+	font-weight: 400;
+	margin: 0 10px;
+	text-align: center;
+}
+
+footer p a {
+	font-size: 18px;
+	color: #283645;
+	line-height: 18px;
+	font-weight: 400;
+	transition: 0.12s;
+}
+
+footer p a:hover {
+	color: #d22856;
+	text-decoration: underline;
+}
+
+footer .soc {
+	display: flex;
+	align-items: center;
+}
+
+footer .soc .soc_center {
+	margin: 0 20px;
+}
+
+footer .soc a {
+	border: 3px solid rgba(0, 0, 0, 0.1);
+	width: 46px;
+	height: 46px;
+	display: flex;
+	justify-content: center;
+	border-radius: 100px;
+	transition: 0.15s;
+}
+
+footer .soc a:hover {
+	border: 3px solid #000;
+}
+
+/*←←←←←←←←←← ----- →→→→→→→→→→*/
+/*←←←←←←←←←← media →→→→→→→→→→*/
+
+@media (max-width: 1000px) {
+	/*←←←←←←←←←← Header - top_menu →→→→→→→→→→*/
+
+	.wrapper_header {
+		background-image: url(../img/desktop/intro/back-desktop.jpg.jpg);
+		background-position: center;
+		height: 853px;
+	}
+
+	.menu-burger {
+		display: block;
+		cursor: pointer;
+		margin-right: 20px;
+	}
+
+	.fixed_menu {
+		display: block;
+		position: fixed;
+		text-align: center;
+		width: 100vw;
+		z-index: 10;
+		top: 0px;
+		transition: 0.5s;
+	}
+
+	.fixed_menu_none li {
+		height: 200px;
+		border: 1px solid #000;
+	}
+
+	.fixed_menu_none li a {
+		transition: 0.15s;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #283645;
+		font-size: 34px;
+		font-weight: 700;
+		text-transform: uppercase;
+		box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.15);
+	}
+
+	.fixed_menu_none #first_el {
+		color: #777;
+		transition: 0.15s;
+		text-shadow: 0 0 5px #000;
+		cursor: pointer;
+	}
+
+	.fixed_menu_none li a:hover {
+		color: #d22856;
+	}
+
+	.fixed_menu_none #first_el:hover {
+		color: #fff;
+	}
+
+	.wrapper_header header ul {
+		display: none;
+		margin-right: 130px;
+	}
+
+	/*←←←←←←←←←←------- →→→→→→→→→→*/
+	/*←←←←←←←←←← section →→→→→→→→→→*/
+	.section > h2 {
+		font-size: 24px;
+	}
+
+	.section .grid_post .post {
+		margin: 25px 20px;
+	}
+
+	.section .grid_post .post .post_content {
+		text-align: left;
+		margin: 30px;
+
+	}
+
+	.section .grid_post .post .post_content h3 {
+		line-height: 34px;
+		font-size: 30px;
+		margin-bottom: 20px;
+	}
+
+	.section .grid_post .post .post_content > p {
+		line-height: 34px;
+		font-size: 28px;
+		height: 130px;
+	}
+
+	.section .grid_post .post .post_content .like p {
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 26px;
+	}
+	/*←←←←←←←←←← ------ →→→→→→→→→→*/
+	/*←←←←←←←←←← footer →→→→→→→→→→*/
+
+	footer {
+		max-width: 1200px;
+		height: auto;
+		margin: 0 auto;
+		display: block;
+		justify-content: space-between;
+		align-items: center;
+		text-align: center;
+	}
+
+	footer > a img{
+		margin: 0;
+		margin-top: 20px;
+	}
+
+	footer p {
+		font-size: 24px;
+		color: #283645;
+		line-height: 28px;
+		font-weight: 400;
+		margin: 0;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	footer p a {
+		font-size: 24px;
+		color: #283645;
+		line-height: 18px;
+		font-weight: 400;
+		transition: 0.12s;
+	}
+
+	footer p a:hover {
+		color: #d22856;
+		text-decoration: underline;
+	}
+
+	footer .soc {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 40px 0;
+	}
+
+	footer .soc a {
+		border: 5px solid rgba(0, 0, 0, 0.1);
+		width: 56px;
+		height: 56px;
+		display: flex;
+		justify-content: center;
+		border-radius: 100px;
+		transition: 0.15s;
+	}
+
+	footer .soc a:hover {
+		border: 5px solid rgba(0, 0, 0, 1);
+	}
+
+	/*←←←←←←←←←← ----- →→→→→→→→→→*/
+}
