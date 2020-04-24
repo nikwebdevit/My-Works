@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
 body {
   background-color: #101010;
   color: #fff;
@@ -11,16 +13,16 @@ a {
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-  max-width: 900px;
+  max-width: 400px;
   margin: 0 auto;
 }
 hr {
-  width: 90%;
+  width: 100%;
   border: none;
   background-color: #999;
   height: 1px;
-  margin-top: 15px;
-  margin-bottom: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 header {
   font-family: "Josefin Sans", sans-serif;
@@ -42,7 +44,7 @@ header .aside-soc {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 header .aside-soc a {
   width: 35px;
@@ -68,5 +70,43 @@ header .name a{
   text-decoration: underline;
 }
 header .name a:hover{
+  color: #fff;
+}
+
+.main {
+ font-family: 'Comfortaa';
+ text-align: center;
+}
+.main h3 {
+  font-size: 16px;
+  margin: 0;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+.main .wrapper_work .site{
+  display: none;
+  margin: 10px 5px;
+  font-size: 13px;
+}
+.main .wrapper_work .site a{
+  color: #999;
+  transition: 0.3s;
+}
+.main .wrapper_work .site a:hover{
+  color: #fff;
+}
+.main .paginator{
+  color: #999;
+  font-size: 14px;
+  font-family: "Josefin Sans", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.main .paginator > span{
+  margin-right: 10px;
+  cursor: pointer;
+}
+.main .paginator_active{
   color: #fff;
 }
