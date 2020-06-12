@@ -1,52 +1,73 @@
+const works = document.querySelector('.wrapper_work')
+const paginator = document.querySelector('#paginator')
 
-let number = document.getElementById("number");
-let count = number.getAttribute('data-num'); //всего записей
-let cnt = 5; //сколько отображаем сначала
-let cnt_page = Math.ceil(count / cnt); //кол-во страниц
+!async function render() {
+  const res = await fetch('js/works.json')
+  const data = await res.json()
+  for (let i=0; i<data.length; i++) {
+    works.insertAdjacentHTML('afterbegin', createTemplate(data[i].name, data[i].link, i+1))
+  }
 
-//выводим список страниц
-let paginator = document.querySelector(".paginator");
-let page = "";
-for (let i = 0; i < cnt_page; i++) {
-  page += "<span data-page=" + i * cnt + "  id=\"page" + (i + 1) + "\">" + (i + 1) + "</span>";
+  const cnt = 5
+  const cnt_page = Math.ceil(data.length / cnt)
+  for (let i=0; i<cnt_page; i++) {
+    paginator.insertAdjacentHTML('beforeend', paginatorTemplate(i, cnt))
+  }
+
+  showPage(cnt)
+}()
+
+const createTemplate = (name, link, index) => {
+  return `
+    <div data-num='${index}' class='site'>
+      <a href='${link}' target='_blank'>
+        ${name}
+      </a>
+    </div>
+  `
 }
-paginator.innerHTML = page;
 
-//выводим первые записи {cnt}
-let div_num = document.querySelectorAll(".site");
-for (let i = 0; i < div_num.length; i++) {
-  if (i < cnt) {
-    div_num[i].style.display = "block";
-  }
+const paginatorTemplate = (index, cnt) => {
+  const numPage = index + 1
+  return `
+    <span data-page='${index * cnt}' id='page${numPage}'>${numPage}</span>
+  `
 }
 
-let main_page = document.getElementById("page1");
-main_page.classList.add("paginator_active");
-
-//листаем
-function pagination(event) {
-  let e = event || window.event;
-  let target = e.target;
-  let id = target.id;
-  
-  if (target.tagName.toLowerCase() != "span") return;
-  
-  
-  let data_page = +target.dataset.page;
-  main_page.classList.remove("paginator_active");
-  main_page = document.getElementById(id);
-  main_page.classList.add("paginator_active");
-
-  let j = 0;
-  for (let i = 0; i < div_num.length; i++) {
-    let data_num = div_num[i].dataset.num;
-    if (data_num <= data_page || data_num >= data_page)
-      div_num[i].style.display = "none";
-
+const showPage = (cnt) => {
+  const divNum = works.querySelectorAll('.site')
+  for (let i=0; i<divNum.length; i++){
+    if (i<cnt) {
+      divNum[i].style.display = 'block'
+    }
   }
-  for (let i = data_page; i < div_num.length; i++) {
-    if (j >= cnt) break;
-    div_num[i].style.display = "block";
-    j++;
+
+  let mainPage = paginator.querySelector('#page1')
+  if (mainPage !== null) {
+    mainPage.classList.add('paginator_active')
   }
+
+  paginator.addEventListener('click', (e) => {
+    let target = e.target
+    if (target.tagName.toLowerCase() === 'span') {
+      let id = target.id
+      const dataPage = +target.dataset.page
+      mainPage.classList.remove('paginator_active')
+      mainPage = paginator.querySelector('#' + id)
+      mainPage.classList.add('paginator_active')
+
+      for (let num of divNum) {
+        let dataNum = num.dataset.num
+        if (dataNum <= dataPage || dataNum >= dataPage) {
+          num.style.display ='none'
+        }
+      }
+      let stop = 0
+      for (let i=dataPage; i<divNum.length; i++) {
+        if (stop >= cnt) break
+        divNum[i].style.display = 'block'
+        stop++
+      }
+    }
+  })
 }
