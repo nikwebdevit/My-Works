@@ -28,11 +28,15 @@
     "link": "myworks/Bot_GTA5RP/index.html"
   },
   {
-    "name": "Chuck API",
+    "name": "Chuck API - JS",
     "link": "https://botgta5.ru/works/Chuck-API"
   },
   {
-    "name": "ExcelApp",
+    "name": "ExcelApp - JS",
     "link": "https://botgta5.ru/works/ExcelApp"
+  },
+  {
+    "name": "NikFilms - React",
+    "link": "https://botgta5.ru/works/NikFilms/"
   }
 ]
